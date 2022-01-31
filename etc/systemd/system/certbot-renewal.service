@@ -1,0 +1,5 @@
+[Unit]
+Description=Certbot Renewal
+
+[Service]
+ExecStart=/usr/bin/certbot renew --standalone --pre-hook "systemctl stop httpd" --post-hook "systemctl start httpd"
